@@ -28,13 +28,3 @@ CREATE TABLE merchants
   registered_date_time date DEFAULT now(),
   activate_date_time date NOT NULL
 )
-
-[QUOTE=DiamondBond][QUOTE=yudhint]Hi DiamondBond, 
-I follow your instructions for build CM12.1 [URL="http://forum.xda-developers.com/moto-g-2014/general/guide-build-cm12-source-t3045014"]this[/URL]
-but when I follow for third step ( Grabbing build dependencies) I got some error because your repo from git [url]https://github.com/DiamondBond/Scripts/[/url] not found 
-
-what can I do next?
-Bg
-thanks[/QUOTE]
-my scripts repo is dead, your gonna have to find the build scripts from luca's repo's + cm13 is out, use cm13 sources and im sure there are new device specific blobs aswell, so your gonna have to find those aswell.[/QUOTE]
-
