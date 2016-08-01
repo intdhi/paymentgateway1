@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ati.paymentgateway.mapper.MerchantMapper">
+	 <cache />
+	 
+	<insert id="insertMerchant" parameterType="Merchant">
+    	INSERT INTO MERCHANTS
+      		(MERCHANT_NAME, TERMINAL_NAME, MERCHANT_TYPE, ACTIVATE_DATE_TIME)
+    	VALUES
+      		(#{merchantName}, #{terminalName}, #{merchantType}, #{activateDateTime})
+  	</insert>
+	
+	<select id="getAllMerchant" resultType="Merchant">
+	    SELECT 
+	    	ID as id,
+	    	MERCHANT_NAME as merchantName,
+	    	TERMINAL_NAME as terminalName,
+	    	MERCHANT_TYPE as merchantType,
+	    	ACTIVATE_DATE_TIME as activateDateTime,
+	    	REGISTERED_DATE_TIME as registeredDateTime
+	    FROM MERCHANTS
+  </select>
+  
+  	<select id="getMerchant" parameterType="long" resultType="Merchant">
+	    SELECT 
+	   		ID as id,
+	    	MERCHANT_NAME as merchantName,
+	    	TERMINAL_NAME as terminalName,
+	    	MERCHANT_TYPE as merchantType,
+	    	ACTIVATE_DATE_TIME as activateDateTime,
+	    	REGISTERED_DATE_TIME as registeredDateTime
+	    FROM MERCHANTS where id=#{id}
+  </select>
+  
+  <delete id="deleteMerchant" parameterType="long">
+  	delete from merchants where id=#{id}
+  </delete>
+  
+  <update id="updateMerchant" parameterType="Merchant">
+  		update merchants 
+  		set 
+  		<if test="merchantName != null">
+			MERCHANT_NAME = #{merchantName}
+		</if>
+		 <if test="terminalName != null">
+			,TERMINAL_NAME = #{terminalName}
+		</if>
+  		<if test="merchantType != null">
+			,MERCHANT_TYPE = #{merchantType}
+		</if>
+		<if test="activateDateTime != null">
+			,ACTIVATE_DATE_TIME = #{activateDateTime}
+		</if>
+		where id=#{id}
+  </update>
+  
+    
+</mapper>

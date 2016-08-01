@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<decorators defaultdir="/decorators">
+	  <excludes>
+	      <pattern>/*ajax=true*</pattern>
+	      <pattern>/scripts/*</pattern>
+	      <pattern>/styles/*</pattern>
+	      <pattern>/resources/*</pattern>
+	      <pattern>/login*</pattern>
+	       <pattern>/admin/login</pattern>
+	      <pattern>/logout*</pattern>
+	  </excludes>
+
+<!--     <excludes> -->
+<!--         <pattern>/main*</pattern> -->
+<!--     </excludes> -->
+    <decorator name="failure" page="failure.jsp">
+    	<pattern>*/403</pattern>
+    	<pattern>*/404</pattern>
+    	<pattern>*/500</pattern>
+    </decorator>
+    <decorator name="full" page="full.jsp">
+        <pattern>/*</pattern>
+    </decorator>
+</decorators>
