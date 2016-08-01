@@ -2,7 +2,8 @@
 paymentgateway
 
 spring mybatis 
-info 
+
+info :
 project build : maven project
 project name : paymentgateway1
 db : postgresql (config : resources/database.properties)
@@ -19,6 +20,7 @@ username = aa
 password = aa
 
 use this query in your database
+
 CREATE TABLE merchants
 (
   id serial primary key,
